@@ -1,0 +1,21 @@
+<%# Show the title, original_title, original_title_romanized, description, director , producer , release_date, running_time, image, and list of people and each of their name. %>
+
+<%= link_to 'Movies', movies_path %>
+
+<%= image_tag(@movie_details['image']) %>
+<%= @movie_details['title'] %>
+<%= @movie_details['original_title'] %>
+<%= @movie_details['original_title_romanized'] %>
+<%= @movie_details['description'] %>
+<%= @movie_details['director'] %>
+<%= @movie_details['producer'] %>
+<%= @movie_details['release_date'] %>
+<%= @movie_details['running_time'] %>
+
+<ul>
+  <% @people.each do |person| %>
+    <% if person['films'].include?(@movie) %>
+      <li><%= person['name'] %></li>
+    <% end %>
+  <% end %>
+</ul>
