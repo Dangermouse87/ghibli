@@ -1,11 +1,47 @@
-<div class="container">
-  <% @movies.each do |movie| %>
-    <div class="card">
-      <div class="card-title"><%=  movie['title'] %></div>
-      <div class="running-time"><%= movie['running_time'] %></div>
-      <div class="release"><%= movie['release_date'] %></div>
-      <%= image_tag(movie['image']) %>
-      <%= link_to "More Details", movie_path(movie['id']) %>
-    </div>
-  <% end %>
+<div class="card-container">
+  <div class="container my-auto mx-auto px-4 md:px-12 grid grid-cols-5 gap-2">
+    <% @movies.each do |movie| %>
+      <div class="card -mx-1 ">
+          <!-- Column -->
+          <div class="my-1 px-1 w-full ">
+              <!-- Article -->
+              <%= link_to movie_path(movie['id']) do %>
+              <div class="details overflow-hidden rounded-lg shadow-lg">
+                  <%= image_tag  movie['image'], class: "block h-auto w-full" %>
+                  <div class="flex items-center justify-around leading-tight p-2 md:p-4">
+                      <h1 class="text-lg card-title"><strong><%= movie['title'] %></strong></h1>
+                  </div>
+                  <div class="card-details justify-between leading-none p-2 md:p-4">
+                      <p class="text-grey-darker text-sm"><strong>Release Date:</strong> <%= movie['release_date'] %></p>
+                      <p class="text-grey-darker text-sm"><strong>Length:</strong> <%= movie['running_time'] %>m</p>
+                  </div>
+              </div>
+              <% end %>
+              <!-- END Article -->
+          </div>
+          <!-- END Column -->
+      </div>
+      <% end %>
+  </div>
+  <%# <div>
+    <% if total_pages > 1 %>
+  <%# <div class=""> %>
+    <%# <% if current_page > 1 %>
+      <%# <%= link_to 'Previous', movies_path(page: current_page - 1), class: "btn btn-neutral" %>
+    <%# <% end %>
+
+    <%# <% (1..total_pages).each do |page| %>
+      <%# <% if page == current_page %>
+        <%# <span class="btn btn-ghost"><%= page</span>  %>
+      <%# <% else %>
+        <%# <%= link_to page, movies_path(page: page) %>
+      <%# <% end %>
+    <%# <% end %>
+
+    <%# <% if current_page < total_pages %>
+      <%# <%= link_to 'Next', movies_path(page: current_page + 1) %>
+    <%# <% end %>
+  <%# </div> %>
+<%# <% end %>
+  </div><!--Footer container-->
 </div>

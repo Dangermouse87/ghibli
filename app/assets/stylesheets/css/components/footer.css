@@ -1,0 +1,12 @@
+.footer {
+  bottom: 0;
+  width: 100%;
+  background: url('totorofly.jpg');
+  background-color: rgba(0, 0, 0, 1);
+  background-position: left 33%;
+}
+
+.icon {
+  font-size: 20px;
+  margin-inline: 10px;
+}
