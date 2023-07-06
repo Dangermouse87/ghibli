@@ -1,0 +1,11 @@
+<div class="container">
+  <% @movies.each do |movie| %>
+    <div class="card">
+      <div class="card-title"><%=  movie['title'] %></div>
+      <div class="running-time"><%= movie['running_time'] %></div>
+      <div class="release"><%= movie['release_date'] %></div>
+      <%= image_tag(movie['image']) %>
+      <%= link_to "More Details", movie_path(movie['id']) %>
+    </div>
+  <% end %>
+</div>
