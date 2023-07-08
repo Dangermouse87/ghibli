@@ -1,10 +1,10 @@
 require 'net/http'
 
 class MoviesController < ApplicationController
-  MOVIES_PER_PAGE = 10
 
   def index
     get_movies
+    @paginated_movies = Kaminari.paginate_array(@movies).page(params[:page])
   end
 
   def show
@@ -20,8 +20,6 @@ class MoviesController < ApplicationController
     uri = URI(@url)
     response = Net::HTTP.get(uri)
     @movies = JSON.parse(response)
-    @random = @movies.sample
-    # paginate
   end
 
   def get_movie
@@ -38,25 +36,9 @@ class MoviesController < ApplicationController
     @people = JSON.parse(people_response)
   end
 
-  # def paginate
-  #   total_items = @movies.size # Total number of items you want to paginate
-  #   current_page = params[:page].to_i || 1 # Retrieve the current page from params or set a default
-
-  #   total_pages = (total_items.to_f / MOVIES_PER_PAGE).ceil
-  #   offset = (current_page - 1) * MOVIES_PER_PAGE
-  #   limit = MOVIES_PER_PAGE
-
-  #   @movies = retrieve_movies(@movies, offset, limit) # Implement your own method to fetch the items
-  #   render 'index', locals: {
-  #     items: @movies,
-  #     total_items: @movies.size,
-  #     items_per_page: MOVIES_PER_PAGE,
-  #     current_page: current_page,
-  #     total_pages: total_pages
-  #   }
-  # end
-
-  # def retrieve_movies(movies, offset, limit)
-  #   movies[offset, limit]
-  # end
+  def paginate
+    page_size = 10
+    one_page = get_page_of_data params[:page], page_size
+    @paginatable_array = Kaminari.paginate_array(one_page.data, total_count: one_page.total_count).page(params[:page]).per(page_size)
+  end
 end
