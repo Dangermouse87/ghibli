@@ -20,6 +20,7 @@ class MoviesController < ApplicationController
     uri = URI(@url)
     response = Net::HTTP.get(uri)
     @movies = JSON.parse(response)
+    @random = @movies.sample
   end
 
   def get_movie

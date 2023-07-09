@@ -85,7 +85,7 @@
 }
 
 .page a:hover {
-  background: rgba(5, 62, 17, 0.9);
+  background: #516360;
   box-shadow: 0 6px 20px rgb(0 118 255 / 23%);
 }
 
@@ -111,11 +111,12 @@
 }
 
 .next a:hover {
-  background: rgba(5, 62, 17, 0.9);
+  background: #516360;
   box-shadow: 0 6px 20px rgb(0 118 255 / 23%);
 }
 
 .last {
+  display: none;
   margin-inline: 8px;
 }
 
@@ -142,6 +143,7 @@
 }
 
 .first {
+  display: none;
   margin-inline: 8px;
 }
 
