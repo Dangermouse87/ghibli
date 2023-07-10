@@ -11,6 +11,7 @@ class MoviesController < ApplicationController
     get_movie
     get_people
     get_movies
+    get_count
   end
 
   private
@@ -35,6 +36,15 @@ class MoviesController < ApplicationController
     people_uri = URI('https://ghibliapi.vercel.app/people/')
     people_response = Net::HTTP.get(people_uri)
     @people = JSON.parse(people_response)
+  end
+
+  def get_count
+    @people_count = []
+    @people.each do |person|
+      if person['films'].include?(@movie)
+        @people_count << person
+      end
+    end
   end
 
   def paginate

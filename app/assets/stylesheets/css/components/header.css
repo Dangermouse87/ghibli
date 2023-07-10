@@ -4,11 +4,16 @@
   overflow: hidden;
   background-repeat: no-repeat;
   background-position: 15% 19%;
-  height: 250px;
+  height: 300px;
   border-bottom: 5mm black;
   background-color: rgba(0, 0, 0, 0.65)
 }
 
 .title {
   color: #807C51;
+}
+
+.title-pos {
+  bottom: 70px;
+  position: relative
 }
