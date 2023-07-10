@@ -1,7 +1,10 @@
 <%# Show the title, original_title, original_title_romanized, description, director , producer , release_date, running_time, image, and list of people and each of their name. %>
 <div class="card-container">
   <div class="text-gray-700 body-font overflow-hidden bg-transparent">
-    <div class="container px-5 py-24 mx-auto">
+    <div class="flex h-full justify-center items-center pt-6">
+      <%= link_to 'Back To Movies', movies_path, class: "custombtn" %>
+    </div>
+    <div class="container px-5 py-6 mx-auto">
       <div class="lg:w-4/5 mx-auto flex flex-wrap">
         <%= image_tag @movie_details['image'], class:"lg:w-1/2 w-full object-cover object-center rounded border border-gray-200" %>
         <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0 details">
@@ -22,6 +25,9 @@
             <h1 class="text-grey-darker text-lg mb-2"><strong>Characters:</strong></h3>
             </div>
           <div class="card-details justify-between leading-none">
+          <% if @people_count.count <= 2 %>
+            <p>There is currently no character information for this film</p>
+          <% end %>
             <ul>
               <% @people.each do |person| %>
                 <% if person['films'].include?(@movie) %>
