@@ -2,15 +2,15 @@
   <div class= "my-4 justify">
     <%= paginate @paginated_movies, class: "justify-center" %>
   </div>
-  <div class="container my-auto mx-auto px-4 md:px-12 grid grid-cols-5 gap-2">
+  <div class="container my-auto mx-auto px-4 md:px-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
     <% @paginated_movies.each do |movie| %>
       <div class="card -mx-1 ">
           <div class="my-1 px-1 w-full ">
               <%= link_to movie_path(movie['id']) do %>
-              <div class="details overflow-hidden rounded-lg shadow-lg">
+              <div class="details overflow-hidden rounded-lg shadow-lg ">
                   <%= image_tag  movie['image'], class: "block h-auto w-full" %>
                   <div class="flex items-center justify-around leading-tight p-2 md:p-4">
-                      <h1 class="text-lg card-title"><strong><%= movie['title'] %></strong></h1>
+                      <h1 class="text-lg card-title truncate "><strong><%= movie['title'] %></strong></h1>
                   </div>
                   <div class="card-details justify-between leading-none p-2 md:p-4">
                       <p class="text-grey-darker text-sm"><strong>Release Date:</strong> <%= movie['release_date'] %></p>

@@ -9,6 +9,13 @@
   background-color: rgba(0, 0, 0, 0.65)
 }
 
+@media (max-width: 1280px) {
+  .header {
+    height: 200px;
+  }
+}
+
+
 .title {
   color: #807C51;
 }
