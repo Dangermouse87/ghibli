@@ -1,7 +1,6 @@
 require 'net/http'
 
 class MoviesController < ApplicationController
-
   def index
     get_movies
     @paginated_movies = Kaminari.paginate_array(@movies).page(params[:page])
