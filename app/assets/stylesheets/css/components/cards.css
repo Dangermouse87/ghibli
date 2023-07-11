@@ -1,12 +1,15 @@
 .card-container{
+  width: 100%;
   background: url('totorotrumpet.jpg');
+  height: 100%;
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  width: 100%;
-  height: 100%;
+}
 
+.card-background{
+  background-color: rgb(255,255,255,0.5);
 }
 
 @media (max-width: 1280px) {
@@ -30,11 +33,6 @@
   display: flex;
   justify-content: space-betweens;
   transition: 0.3s;
-}
-
-.details:hover {
-  background-color: white;
-  transition: 0.5s;
 }
 
 .movie-card-container {
