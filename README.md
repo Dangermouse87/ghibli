@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## This is a webapp showing the filmography of Studio Ghibli.
 
-Things you may want to cover:
+### This app was built using:
 
-* Ruby version
+## Ruby on Rails for fetching API data
 
-* System dependencies
+## Tailwind for front end
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Kaminari gem for pagination
