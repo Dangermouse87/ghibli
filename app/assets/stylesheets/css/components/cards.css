@@ -9,7 +9,7 @@
 }
 
 .card-background{
-  background-color: rgb(255,255,255,0.5);
+  background-color: rgb(255,255,255,0.8);
 }
 
 @media (max-width: 1280px) {
@@ -32,8 +32,12 @@
 .card-details {
   display: flex;
   justify-content: space-betweens;
-  transition: 0.3s;
 }
+
+/* .details:hover {
+  background-color: white;
+  transition: 0.5s;
+} */
 
 .movie-card-container {
   opacity: 0.1;

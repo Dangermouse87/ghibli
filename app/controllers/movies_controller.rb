@@ -43,7 +43,7 @@ class MoviesController < ApplicationController
     @people_count = []
     @people.each do |person|
       if person['films'].include?(@movie)
-        @people_count << person
+        @people_count << person if person['name'] != @movie_details['director'] || @movie_details['producer']
       end
     end
   end
