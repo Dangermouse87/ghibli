@@ -1,7 +1,7 @@
 <head>
   <title><%= @movie_details['title'] %></title>
 </head>
-<div class="card-container bg-opacity-50">
+<div class="card-container">
   <div class="card-background">
   <div class="text-gray-700 body-font overflow-hidden bg-transparent">
     <div class="flex h-full justify-center items-center pt-6">
@@ -10,7 +10,7 @@
     <div class="container px-5 py-6 mx-auto">
       <div class="lg:w-4/5 mx-auto flex flex-wrap">
         <%= image_tag @movie_details['image'], class:"lg:w-1/2 w-full object-cover object-center rounded border border-gray-200" %>
-        <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0 details">
+        <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
           <h2 class="text-sm title-font text-gray-500 tracking-widest"><%= @movie_details['original_title']%> (<%= @movie_details['original_title_romanised'] %>)</h2>
           <h1 class="text-gray-900 text-3xl title-font font-medium mb-1"><%= @movie_details['title'] %></h1>
           <div class="card-details justify-between leading-none ">
@@ -28,7 +28,7 @@
             <h1 class="text-grey-darker text-lg mb-2"><strong>Characters:</strong></h3>
             </div>
           <div class="card-details justify-between leading-none">
-          <% if @people_count.count <= 2 %>
+          <% if @people_count.count.zero? %>
             <p>There is currently no character information for this film</p>
           <% end %>
             <ul>
