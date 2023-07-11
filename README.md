@@ -9,3 +9,7 @@
 ## Tailwind for front end
 
 ## Kaminari gem for pagination
+
+### You can visit the app [here](https://ghibliophile-439782945570.herokuapp.com/)https://ghibliophile-439782945570.herokuapp.com/) to try it out:
+
+### Thank you for visiting!
