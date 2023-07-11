@@ -121,8 +121,11 @@
 
 .form-input {
   color: #516360;
+  width: 100%;
 }
 
-.form-submit {
-
+.form-container {
+  width: 100%;
+  padding-inline: 10px;
+  background-color: white;
 }
