@@ -3,6 +3,8 @@ require 'net/http'
 class MoviesController < ApplicationController
   def index
     get_movies
+    search
+    filter
     @paginated_movies = Kaminari.paginate_array(@movies).page(params[:page])
   end
 
@@ -50,5 +52,25 @@ class MoviesController < ApplicationController
     page_size = 10
     one_page = get_page_of_data params[:page], page_size
     @paginatable_array = Kaminari.paginate_array(one_page.data, total_count: one_page.total_count).page(params[:page]).per(page_size)
+  end
+
+  def search
+    if params[:query].present?
+      results = []
+      @movies.each do |movie|
+        results << movie if movie['title'].downcase.include?(params[:query].downcase)
+      end
+      @movies = results
+    end
+  end
+
+  def filter
+    sorted_movies = @movies.sort_by { |movie| movie['release_date'] }
+    case params[:filter]
+    when 'Old'
+      @movies = sorted_movies
+    when 'New'
+      @movies = sorted_movies.reverse
+    end
   end
 end

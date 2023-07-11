@@ -45,8 +45,8 @@
   cursor: pointer;
   border: none;
   padding: 0 56px;
-  height: 50px;
-  line-height: 50px;
+  height: 40px;
+  line-height: 40px;
   border-radius: 7px;
   background-color: #8D9B6A;
   color: white;
@@ -113,4 +113,12 @@
 .pagination {
   justify-content: center;
   display: flex
+}
+
+.form-input {
+  color: #516360;
+}
+
+.form-submit {
+
 }

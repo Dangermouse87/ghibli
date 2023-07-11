@@ -1,7 +1,17 @@
 <div class="card-container">
   <div class="card-background">
-    <div class= "my-4 justify">
-      <%= paginate @paginated_movies, class: "justify-center" %>
+    <div class= "my-4 flex justify-center item-center">
+      <%= form_with url: movies_path, method: :get do |form| %>
+        <%= form.text_field :query, placeholder: "Search", class: "rounded form-input focus:border-emerald-600 border-2 focus:ring-0 border"%>
+        <%= button_tag type: 'submit', class: "form-submit" do %>
+          <i class="fa-solid fa-magnifying-glass"></i>
+        <% end %>
+      <% end %>
+    </div>
+    <div class= "my-4 flex justify-center item-center">
+        <h3 class="mx-4 text-center text-grey-darker text-lg mb-2 hidden lg-block">Sort By:</h3>
+        <%= link_to "Oldest", movies_path(filter: 'Old'), class: "custombtn mx-2 text-center" %>
+        <%= link_to "Newest", movies_path(filter: 'New'), class: "custombtn mx-2 text-center" %>
     </div>
     <div class="container my-auto mx-auto px-4 md:px-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
       <% @paginated_movies.each do |movie| %>
