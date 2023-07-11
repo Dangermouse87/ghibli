@@ -70,4 +70,3 @@ end
 
 gem "tailwindcss-rails", "~> 2.0"
 gem "kaminari"
-gem 'bootstrap', '~> 5.3.0.alpha3'
