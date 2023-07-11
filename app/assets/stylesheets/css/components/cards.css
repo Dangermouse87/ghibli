@@ -61,7 +61,7 @@
 }
 
 .custombtn:hover {
-    background: rgba(5, 62, 17, 0.9);
+    background: #516360;
     box-shadow: 0 6px 20px rgb(0 118 255 / 23%);
 }
 
