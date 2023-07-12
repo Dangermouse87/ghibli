@@ -6,7 +6,7 @@
     <div class= "my-4 flex justify-center item-center">
       <%= form_with url: movies_path, method: :get do |form| %>
         <div class="rounded-lg form-container flex items-center border-2 focus:border-4 border-lime-600">
-        <%= form.text_field :query, placeholder: "Search", class: " form-input focus:ring-0 border-white width-full focus:border-0"%>
+        <%= form.text_field :query, placeholder: "Search", class: " form-input focus:ring-0 border-white width-full focus:border-white"%>
         <%= button_tag type: 'submit', class: "form-submit" do %>
           <i class="fa-solid fa-magnifying-glass"></i>
         <% end %>
