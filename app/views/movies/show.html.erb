@@ -5,21 +5,34 @@
   <div class="card-background">
   <div class="text-gray-700 body-font overflow-hidden bg-transparent">
     <div class="flex h-full justify-center items-center pt-6">
-      <%= link_to '<<', movies_path, class: "custombtn" %>
+      <%= link_to movies_path, class: 'custombtn' do %>
+        <i class="fa-solid fa-house" style="color: #ffffff;"></i>
+      <% end %>
     </div>
     <div class="container px-5 py-6 mx-auto">
       <div class="lg:w-4/5 mx-auto flex flex-wrap">
         <%= image_tag @movie_details['image'], class:"lg:w-1/2 w-full object-cover object-center rounded border border-gray-200" %>
         <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
           <h2 class="text-sm title-font text-gray-500 tracking-widest"><%= @movie_details['original_title']%> (<%= @movie_details['original_title_romanised'] %>)</h2>
-          <h1 class="text-gray-900 text-3xl title-font font-medium mb-1"><%= @movie_details['title'] %></h1>
-          <div class="card-details justify-between leading-none ">
-              <p class="text-grey-darker text-sm"><strong>Release Date:</strong> <%= @movie_details['release_date'] %></p>
-              <p class="text-grey-darker text-sm"><strong>Length:</strong> <%= @movie_details['running_time'] %>m</p>
+          <h1 class="text-gray-900 text-3xl title-font font-medium mb-4"><%= @movie_details['title'] %></h1>
+          <div class="card-details justify-between leading-none mb-4 ">
+              <div class="w-32">
+                <p class="text-grey-darker text-sm text-center"><strong>Released</strong><br><%= @movie_details['release_date'] %></p>
+              </div>
+              <div class="w-32">
+              <p class="text-grey-darker text-sm text-center"><strong>Length</strong><br><%= @movie_details['running_time'] %>m</p>
+              </div>
           </div>
-          <div class="card-details justify-between leading-none ">
-            <p class="text-grey-darker text-sm"><strong>Director:</strong> <%= @movie_details['director'] %></p>
-            <p class="text-grey-darker text-sm"><strong>Producer:</strong> <%= @movie_details['producer'] %></p>
+          <div class="card-details justify-between leading-none">
+            <div class="w-32">
+              <p class="text-grey-darker text-sm text-center"><strong>Director:</strong><br><%= @movie_details['director'] %></p>
+            </div>
+            <div class="w-32">
+              <p class="text-grey-darker text-sm text-center"><strong>Producer(s):</strong></p>
+              <% @movie_details['producer'].split(",").each do |producer| %>
+                <p class="text-grey-darker text-sm text-center"><%= producer %></p>
+              <% end %>
+            </div>
           </div>
           <div class="flex mb-4">
           </div>
