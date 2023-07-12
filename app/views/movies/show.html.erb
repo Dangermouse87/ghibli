@@ -16,18 +16,18 @@
           <h2 class="text-sm title-font text-gray-500 tracking-widest"><%= @movie_details['original_title']%> (<%= @movie_details['original_title_romanised'] %>)</h2>
           <h1 class="text-gray-900 text-3xl title-font font-medium mb-4"><%= @movie_details['title'] %></h1>
           <div class="card-details justify-between leading-none mb-4 ">
-              <div class="w-32">
+              <div class="w-36">
                 <p class="text-grey-darker text-sm text-center"><strong>Released</strong><br><%= @movie_details['release_date'] %></p>
               </div>
-              <div class="w-32">
+              <div class="w-36">
               <p class="text-grey-darker text-sm text-center"><strong>Length</strong><br><%= @movie_details['running_time'] %>m</p>
               </div>
           </div>
           <div class="card-details justify-between leading-none">
-            <div class="w-32">
+            <div class="w-36">
               <p class="text-grey-darker text-sm text-center"><strong>Director:</strong><br><%= @movie_details['director'] %></p>
             </div>
-            <div class="w-32">
+            <div class="w-36">
               <p class="text-grey-darker text-sm text-center"><strong>Producer(s):</strong></p>
               <% @movie_details['producer'].split(",").each do |producer| %>
                 <p class="text-grey-darker text-sm text-center"><%= producer %></p>
