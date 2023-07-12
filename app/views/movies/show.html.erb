@@ -25,10 +25,10 @@
           </div>
           <div class="card-details justify-between leading-none">
             <div class="w-36">
-              <p class="text-grey-darker text-sm text-center"><strong>Director:</strong><br><%= @movie_details['director'] %></p>
+              <p class="text-grey-darker text-sm text-center"><strong>Director</strong><br><%= @movie_details['director'] %></p>
             </div>
             <div class="w-36">
-              <p class="text-grey-darker text-sm text-center"><strong>Producer(s):</strong></p>
+              <p class="text-grey-darker text-sm text-center"><strong>Producer(s)</strong></p>
               <% @movie_details['producer'].split(",").each do |producer| %>
                 <p class="text-grey-darker text-sm text-center"><%= producer %></p>
               <% end %>
@@ -38,7 +38,7 @@
           </div>
           <p class="leading-relaxed"><%= @movie_details['description'] %></p>
           <div class="mt-4">
-            <h1 class="text-grey-darker text-lg mb-2"><strong>Characters:</strong></h3>
+            <h1 class="text-grey-darker text-lg mb-2"><strong>Characters</strong></h3>
             </div>
           <div class="card-details justify-between leading-none">
           <% if @people_count.count.zero? %>
