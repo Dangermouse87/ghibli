@@ -14,9 +14,12 @@
       <% end %>
     </div>
     <div class= "my-4 flex justify-center item-center">
-        <h3 class="mx-4 text-center text-grey-darker text-lg mb-2 hidden lg-block">Sort By:</h3>
-        <%= link_to "Oldest", movies_path(filter: 'Old'), class: "custombtn mx-2 text-center" %>
-        <%= link_to "Newest", movies_path(filter: 'New'), class: "custombtn mx-2 text-center" %>
+        <%= link_to movies_path(filter: 'Old'), class: 'custombtn mx-2' do %>
+          Sort: Year <i class="fa-solid fa-arrow-up" style="color: #ffffff;"></i>
+        <% end %>
+        <%= link_to movies_path(filter: 'New'), class: 'custombtn mx-2' do %>
+          Sort: Year <i class="fa-solid fa-arrow-down" style="color: #ffffff;"></i>
+        <% end %>
     </div>
       <% if @paginated_movies.count.zero? %>
           <h1 class="title text-center m-4 text-2xl">I'm sorry, there are no matches!</h1>
