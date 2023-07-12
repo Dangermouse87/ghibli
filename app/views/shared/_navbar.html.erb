@@ -1,9 +1,7 @@
 <nav class="bg-transparent flex items-center justify-between flex-wrap py-4 lg:px-12">
   <div class="flex justify-between w-full pl-6 pr-2 pb-5 lg:pb-0">
       <div class="flex items-center flex-shrink-0 text-gray-800 mr-16 ghibli-icon">
-          <%= link_to movies_path, class: "h-12" do %>
-            <i class="fa-solid fa-house-chimney" style="color: #8d9b6a;"></i>
-          <% end %>
+          <%= link_to image_tag("home.png"), movies_path %>
       </div>
       <div class="flex w-full lg:block lg:flex items-center lg:w-auto lg:px-3 justify-end icon">
         <%= link_to image_tag('totoroicon.png'), movie_path(@random['id']) %>
