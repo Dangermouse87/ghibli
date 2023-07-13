@@ -10,6 +10,6 @@
 
 ## Kaminari gem for pagination
 
-### You can visit the app [here](https://ghibliophile-439782945570.herokuapp.com/) to try it out:
+### You can visit the app [here](https://ghibliophile-7071794170ed.herokuapp.com/) to try it out:
 
 ### Thank you for visiting!
