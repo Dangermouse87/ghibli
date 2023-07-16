@@ -30,7 +30,7 @@ class MoviesController < ApplicationController
     @movie = "https://ghibli.rest/films?id=#{movie_id}"
     uri = URI(@movie)
     response = Net::HTTP.get(uri)
-    @movie_details = JSON.parse(response)
+    @movie_details = JSON.parse(response)[0]
   end
 
   def get_people
@@ -43,7 +43,8 @@ class MoviesController < ApplicationController
     @people_count = []
     @people.each do |person|
       if person['films'].include?(@movie)
-        @people_count << person if person['name'] != @movie_details['director'] || @movie_details['producer']
+        # @people_count << person if person['name'] != @movie_details['director'] || @movie_details['producer']
+        @people_count << person
       end
     end
   end
@@ -55,10 +56,11 @@ class MoviesController < ApplicationController
   end
 
   def search
-    if params[:query].present?
+    if params[:query]
       results = []
       @movies.each do |movie|
         results << movie if movie['title'].downcase.include?(params[:query].downcase)
+        results << movie if movie['release_date'].include?(params[:query])
       end
       @movies = results
     end

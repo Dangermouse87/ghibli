@@ -5,7 +5,10 @@
   <div class="card-background">
   <div class="text-gray-700 body-font overflow-hidden bg-transparent">
     <div class="flex h-full justify-center items-center pt-6">
-      <%= link_to movies_path, class: 'custombtn' do %>
+      <%= link_to :back, class: 'custombtn mx-2' do %>
+        <i class="fa-solid fa-backward" style="color: #ffffff;"></i>
+      <% end %>
+      <%= link_to movies_path, class: 'custombtn mx-2' do %>
         <i class="fa-solid fa-house" style="color: #ffffff;"></i>
       <% end %>
     </div>
