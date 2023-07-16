@@ -27,6 +27,7 @@ cd ghibli
 bundle install
 ```
 The app should be available on the browser at `http://localhost:3000`
+The app is also available at [`https://ghibliophile-7071794170ed.herokuapp.com/`](https://ghibliophile-7071794170ed.herokuapp.com/)
 
 ## Project Structure
 - `views/movies`:   The main pages for the application.
