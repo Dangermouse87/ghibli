@@ -18,7 +18,7 @@ class MoviesController < ApplicationController
   private
 
   def get_movies
-    @url = 'https://ghibli.rest/films'
+    @url = 'https://ghibliapi.vercel.app/films'
     uri = URI(@url)
     response = Net::HTTP.get(uri)
     @movies = JSON.parse(response)
@@ -27,14 +27,14 @@ class MoviesController < ApplicationController
 
   def get_movie
     movie_id = params[:id]
-    @movie = "https://ghibli.rest/films?id=#{movie_id}"
+    @movie = "https://ghibliapi.vercel.app/films?id=#{movie_id}"
     uri = URI(@movie)
     response = Net::HTTP.get(uri)
     @movie_details = JSON.parse(response)[0]
   end
 
   def get_people
-    people_uri = URI('https://ghibli.rest/people/')
+    people_uri = URI('https://ghibliapi.vercel.app/people/')
     people_response = Net::HTTP.get(people_uri)
     @people = JSON.parse(people_response)
   end
